@@ -1,7 +1,12 @@
-<ion-view view-title="Chats">
+<ion-view hide-nav-bar="true" view-title="Chats">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>
+                <span>Dashboard</span>
+            </h2>
+        </div>
+    </md-toolbar>
     <md-content>
-        <br>
-        <br>
         <md-list>
             <md-list-item class="md-3-line" ng-repeat="chat in chats" ng-click="goToChat(chat.id)">
                 <img ng-src="{{chat.face}}" class="md-avatar" alt="{{chat.name}}"/>

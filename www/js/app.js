@@ -1,68 +1,27 @@
-// Ionic Starter App
-
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
-// 'starter.services' is found in services.js
-// 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','ngMaterial', 'ui.router'])
 
 .run(function($ionicPlatform,$rootScope, $state) {
-
-//    $rootScope.transitionTo = function(state, params) {
-//        $state.transitionTo(state, params, { location: true, inherit: true, relative: $state.$current, notify: true });
-//    }
-//    $rootScope.checkState = function (state) {
-//        return $state.current.name == state ? true : false;
-//    }
-//    $rootScope.$on('$stateChangeSuccess',
-//                   function(event, toState, toParams, fromState, fromParams){
-//
-//        if($state.current.name == 'tab.account') {
-//            $rootScope.tab = { selected : 2 }
-//        }
-//        else if($state.current.name == 'tab.chats') {
-//            $rootScope.tab = { selected : 1 }
-//        } else {
-//
-//            $rootScope.tab = { selected : 0 }
-//        }
-//    })
-
   $ionicPlatform.ready(function() {
-    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-    // for form inputs)
     if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
       cordova.plugins.Keyboard.disableScroll(true);
 
     }
     if (window.StatusBar) {
-      // org.apache.cordova.statusbar required
       StatusBar.styleLightContent();
     }
   });
 })
 
 .config(function($stateProvider, $urlRouterProvider, $mdThemingProvider,$mdGestureProvider) {
-
-  // Ionic uses AngularUI Router which uses the concept of states
-  // Learn more here: https://github.com/angular-ui/ui-router
-  // Set up the various states which the app can be in.
-  // Each state's controller can be found in controllers.js
   $mdThemingProvider.theme('default');
   $mdGestureProvider.skipClickHijack();
   $stateProvider
-
-  // setup an abstract state for the tabs directive
     .state('tab', {
     url: '/tab',
     abstract: true,
     templateUrl: 'templates/tabs.html'
   })
-
-  // Each tab has its own nav history stack:
-
   .state('tab.dash', {
     url: '/dash',
     views: {
@@ -102,7 +61,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','n
     }
   });
 
-  // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/dash');
 
 });

@@ -5,9 +5,30 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','ngMaterial'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','ngMaterial', 'ui.router'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform,$rootScope, $state) {
+
+//    $rootScope.transitionTo = function(state, params) {
+//        $state.transitionTo(state, params, { location: true, inherit: true, relative: $state.$current, notify: true });
+//    }
+//    $rootScope.checkState = function (state) {
+//        return $state.current.name == state ? true : false;
+//    }
+//    $rootScope.$on('$stateChangeSuccess',
+//                   function(event, toState, toParams, fromState, fromParams){
+//
+//        if($state.current.name == 'tab.account') {
+//            $rootScope.tab = { selected : 2 }
+//        }
+//        else if($state.current.name == 'tab.chats') {
+//            $rootScope.tab = { selected : 1 }
+//        } else {
+//
+//            $rootScope.tab = { selected : 0 }
+//        }
+//    })
+
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)

@@ -1,9 +1,16 @@
 <ion-view view-title="Account">
-  <ion-content>
-    <ion-list>
-    <ion-toggle  ng-model="settings.enableFriends">
-        Enable Friends
-    </ion-toggle>
-    </ion-list>
-  </ion-content>
+    <ion-content>
+        <ion-list>
+<!--
+            <ion-item>
+                <div>Enable Friends: {{ settings.enableFriends }}</div>
+                <md-switch ng-model="settings.enableFriends" aria-label="Switch 1" style="float:right;"></md-switch>
+            </ion-item>
+-->
+            <ion-item>
+                <div style="float:right;"><md-switch ng-model="settings.enableFriends"></md-switch></div>
+            <div style="overflow:auto; float:left; padding-left: 1%; padding-top: 1.2%;">Enable Friends: {{ settings.enableFriends }}</div>
+                </ion-item>
+        </ion-list>
+    </ion-content>
 </ion-view>
